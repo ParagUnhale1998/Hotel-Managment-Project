@@ -1,0 +1,155 @@
+<nav class="ownerNavbar">
+  <div class="logo">
+    <img src="" alt="">
+  </div>
+  <div class="btnContainer">
+    <button class="btn btn-primary" (click)="navigateToHomePage()">Home</button>
+    <button class="btn btn-danger" (click)="navigateToLogin()">Login</button>
+  </div>
+</nav>
+<div class="container-fluid mainContainer">
+  <div class="row">
+    <div class="col-md-7 heading">
+      <!-- Business Owner Heading -->
+      <h2>Grow Your Business to Connect with More Customers</h2>
+      <p>
+        Welcome to our hotel business account registration. Fill in the form below to create an account and connect with
+        potential customers.
+      </p>
+      <p>
+        By registering your hotel, you can showcase your rooms, amenities, and services to travelers from around the
+        world. Don't miss out on this opportunity to increase bookings and revenue.
+      </p>
+      <div class="jumbo-sub-title">
+        Trusted by over 45,000 travel agents worldwide
+      </div>
+      <div class="row mt-5  detailContainer">
+        <div class="col-md-3 col-4">
+          <div class="d-flex mt-3">
+            <img src="./assets/images/globe.svg" class="jumbo_images">
+            <div class="jumbo-counter-text">
+              80 <span>Countries</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-4">
+          <div class="d-flex mt-3">
+            <img src="./assets/images/group-19.svg" class="jumbo_images">
+            <div class="jumbo-counter-text">
+              43,000+<span>Hotels</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-4">
+          <div class="d-flex mt-3">
+            <img src="./assets/images/group-9.svg" class="jumbo_images">
+            <div class="jumbo-counter-text">
+              800+<span>Cities</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 formContainer">
+      <!-- Registration Form -->
+      <h2>Hotel Business Account Registration</h2>
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <span for="name" class="label-name">Full Name:</span>
+          <input type="text" class="form-control label-input" id="name" formControlName="name"
+            placeholder="Enter Your Name">
+            <div *ngIf="registrationForm.controls['name'].touched && registrationForm.controls['name'].errors?.['required']" class="error-message">
+              Full Name is required.
+            </div>
+      
+
+        </div>
+        <div class="form-group">
+          <span for="name" class="label-name">Username:</span>
+          <input type="text" class="form-control label-input" id="id" formControlName="id"
+            placeholder="Enter Unique Username">
+            <div
+            *ngIf="registrationForm.controls['id'].touched && registrationForm.controls['id'].errors?.['required']"
+            class="error-message">
+            UsernameID is required.
+          </div>
+          <span class="error-message" *ngIf="registrationForm.get('id')?.errors?.['whiteSpace']">White spaces are not allowed in the name</span>
+
+        </div>
+        <div class="form-group">
+          <label for="email" class="label-name">Email:</label>
+          <input type="email" class="form-control label-input" id="email" formControlName="email"
+            placeholder="Enter Your Email">
+            <div
+            *ngIf="registrationForm.controls['email'].touched && registrationForm.controls['email'].errors?.['required']"
+            class="error-message">
+            Email is required.
+          </div>
+
+        </div>
+        <div class="form-group">
+          <label for="company" class="label-name">Company:</label>
+          <input type="text" class="form-control label-input" id="company" formControlName="company"
+            placeholder="Enter Company Name">
+            <div
+            *ngIf="registrationForm.controls['company'].touched && registrationForm.controls['company'].errors?.['required']"
+            class="error-message">
+            Company Name is required.
+          </div>
+
+        </div>
+        <div class="form-group">
+          <label for="phoneNO" class="label-name">Phone No:</label>
+          <input type="number" class="form-control label-input"  id="phoneNO" formControlName="phoneNO"
+            placeholder="Enter Phone No">
+            <div
+            *ngIf="registrationForm.controls['phoneNO'].touched && registrationForm.controls['phoneNO'].errors?.['required']"
+            class="error-message">
+            Phone No is required.
+          </div>
+
+        </div>
+        <div class="form-group">
+          <label for="password" class="label-name">Password:</label>
+          <input type="password" class="form-control label-input" id="password" formControlName="password"
+            placeholder="Enter your password">
+            <div
+            *ngIf="registrationForm.controls['password'].touched && registrationForm.controls['password'].errors?.['required']"
+            class="error-message">
+            Password is required.
+          </div>
+
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword" class="label-name">Confirm Password:</label>
+          <input type="password" class="form-control label-input" id="confirmPassword" formControlName="confirmPassword"
+            placeholder="Confirm your password" (keyup)="ConfirmPass()">
+          <div
+            *ngIf="registrationForm.controls['confirmPassword'].touched && registrationForm.controls['confirmPassword'].errors?.['required']"
+            class="error-message">
+            Password is required.
+          </div>
+          <span class="error-message" *ngIf="registrationForm.controls['confirmPassword'].dirty && !isMatch">Password
+            Does Not Matched</span>
+        </div>
+  
+    <div class="form-group idCard">
+      <label for="idCard">ID Card (e.g., Driving License, ID Card):</label>
+      <input type="file" class="form-control-file" id="idCard" formControlName="idCard" >
+      <!-- <input type="file" class="form-control-file" id="idCard" formControlName="idCard"  (change)="onFileSelected($event)" accept="images/*"> -->
+      <!-- <label for="address" class="label-name">Address:</label> -->
+      <textarea class="form-control " id="address" formControlName="address" rows="3"
+        placeholder="Enter your full address"></textarea>
+      <!-- <label id="name-error" class="error" for="name">Please provide your name</label> -->
+
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="agreeTerms" formControlName="agreeTerms">
+      <label class="form-check-label" for="agreeTerms">I agree to the terms and conditions</label>
+    </div>
+    <button type="submit" class="btn btn-danger w-100" [disabled]="!registrationForm.valid">Register Now</button>
+    </form>
+  </div>
+</div>
+</div>
+<app-footer></app-footer>

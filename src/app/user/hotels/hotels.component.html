@@ -1,0 +1,34 @@
+<div class="container p-1 mainContainer">
+  <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search ... Name , Location " aria-label="Search"
+          [(ngModel)]="searchInput">
+    </div>
+
+  <div class="cardContainer">
+    <div class="card"  *ngFor="let hotel of hotelListData | filter : searchInput">
+      <img src={{hotel.image}} class="card-img-top" [alt]="hotel.hotelName">
+      <div class="card-body">
+        <div class="cardheading">
+          <h3 class="card-title" [matBadge]="hotel.star" matBadgeColor="accent">{{hotel.hotelName}}</h3>
+          <h4 class="card-title">{{hotel.location}}</h4>
+          <p class="card-text">{{hotel.discription.slice(0, 120)}}...</p>
+        </div>
+        <div class="detailCotainer">
+          <p class="contact">Contact No : {{hotel.phoneNo}}</p>
+          <p><strong>Available Rooms</strong>:{{hotel.availability}}</p>
+        </div>
+        <p class="card-price">{{hotel.price | currency: 'INR':'symbol':"1.0-2"}} / night + 5% tax</p>
+        <div class="bookContainer">
+            <a class="btn btn-success" *ngIf="userIsRegister" (click)="bookNow(hotel.ownerId,hotel)">Book Now</a>
+            <a class="btn btn-primary" *ngIf="!userIsRegister" (click)="loginpage()">Login To Book</a>
+            <a class="btn btn-primary" *ngIf="userIsRegister" (click)="addToCart(hotel.ownerId,hotel.id)">Add To Cart</a>
+          
+
+
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <app-ads></app-ads> -->

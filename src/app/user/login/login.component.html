@@ -1,0 +1,50 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="heading">
+    <h1>There’s a smarter way to Book Hotel around</h1>
+    <p>Sign up with your phone number and get exclusive access to
+      discounts and savings on Hotels stays and with our many
+      travel partners.</p>
+    <div class="businesHeading">
+      <!-- <h3>Make A Travel Agent</h3> -->
+      <p>Connect With us</p>
+      <pre>Built to simplify business stays, and make sure both you 
+      and your employees always have a good night’s sleep.</pre>
+     <div class="btnContainer">
+       <button  routerLink="/owner/signUp">Create business Account</button>
+       <button class="loginBtn" (click)="navigateToLogin()">Login business Account</button>
+     </div>
+    </div>
+  </div>
+  <div class="signUpContainer"*ngIf="showSignUp">
+    <app-sign-up></app-sign-up>
+    <a (click)="showloginpage()">Already have an account?</a>
+  </div>
+  <div class="loginContainer" *ngIf="showLogin">
+
+    <form  class="login-form" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+      <div class="loginheading">
+        <mat-icon>person</mat-icon>
+      <h2>Login</h2>
+   </div>
+      <div class="form-group">
+        <label for="id">Username</label>
+        <input type="text" id="id" formControlName="id" placeholder="Enter Username" required>
+        <div *ngIf="loginForm.controls['id'].touched && loginForm.controls['id'].errors?.['required']" class="error-message">
+          Username is required.
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" placeholder="Enter Password" required>
+        <div *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].errors?.['required']" class="error-message">
+          Password is required.
+        </div>
+      </div>
+      <button type="submit" class="login-button" [ngClass]="{'disabled-button': loginForm.invalid}">Login</button>
+    </form>
+    <button (click)="showSignUpForm()" class="singUp-Active">Create New Account</button>
+
+  </div>
+</div>
+<app-userfooter></app-userfooter>

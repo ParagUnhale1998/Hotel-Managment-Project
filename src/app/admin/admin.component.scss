@@ -1,0 +1,105 @@
+:host{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    background-image: linear-gradient(270deg, #2db5ff, #f17bff);
+    background-position: fixed;
+}
+
+ul{
+    // background: #000;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 1%;
+    border: 1px solid rgba(255, 255, 255, 0.653);
+    color: #fff;
+  
+   
+    button{
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+    .nav-link {
+        border: 1px solid rgba(255, 255, 255, 0);
+        margin: 0;
+        // border: none;
+        // outline: none;
+    }
+   .nav-link:hover{
+    border: 1px solid rgba(255, 255, 255, 0.865);
+
+        border-radius: 5px;
+    }
+    .active{
+        border: 1px solid rgba(255, 255, 255, 0);
+
+        color: #000;
+        border-radius: 5px;
+     
+    }
+    .active:focus {
+        border: none;
+        border: 1px solid rgba(255, 255, 255, 0);
+
+        outline: none;
+      }
+     
+}
+.nav-tabs{
+    color: #fff;
+}
+
+.tab-content{
+    width: 100%;
+    height: 100%;
+    // border: 1px solid red;
+}
+.mt-2 {
+    margin: 0 !important;
+}
+
+app-admin-footer{
+    width: 100%;
+    position: relative;
+    bottom: 0;
+
+}
+// app-all-hotels{
+//     overflow-y: scroll;
+//     scroll-behavior: smooth;
+// }
+
+.mainContainer{
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+
+
+.mainContainer::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  .mainContainer::-webkit-scrollbar-track {
+    background: none;
+  }
+  
+  /* Handle */
+  .mainContainer::-webkit-scrollbar-thumb {
+    background: #ffffff2f;
+    border-radius: 5px;
+  }
+  
+  /* Handle on hover */
+  .mainContainer::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(270deg, #2db5ff, #f17bff);
+  }

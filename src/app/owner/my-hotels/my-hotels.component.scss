@@ -1,0 +1,167 @@
+:host{
+    width: 100%;
+    height: 100%;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    padding: 1% 1%;
+    top: 0;
+    width: 100%;
+    .logo{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        color: #fff;
+       
+        // width: 10%;
+        h2{
+margin: 0;
+font-style: italic;
+padding: 0;
+font-size: 4.5vh;
+font-weight: 660;
+        }
+        p{
+            margin: 0;
+            padding: 0;
+            font-weight: 600;
+        }
+    }
+    .navLinks{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+}
+.mainContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+    background-image: url(../../../assets/images/jumeirah-beach-hotel-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: 100%;
+    object-fit: cover;
+    color: #fff;
+  
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.535);
+    .detailContainer{
+        width: 50%;
+        // border: 1px solid wheat;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        height: 50%;
+        gap: 10px;
+   
+    h3{
+       font-size: 2.5vw;
+       line-height: 1.5;
+    }
+    p{
+font-size: 1vw;
+    }
+    .btnContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    
+    button{
+        width: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+    .custom-button {
+        background-color: white;
+        color: rgba(0, 0, 0, 0.825);
+        // border: 2px solid black;
+        /* Add any other styles you want for the custom button */
+      }
+    }
+    span{
+
+    }
+   
+}
+}
+
+
+.bookingContainer{
+    width: 100%;
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    background-image: url(../../../assets/images/jumeirah-beach-hotel-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: 100%;
+    object-fit: cover;
+    flex-direction: column;
+    .Heading{
+        background: #0f75fb;
+        color: #fefefe;
+        text-align: center;
+        text-transform: capitalize;
+        letter-spacing: 1px;
+        width: auto;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        font-size: 1.5vw;
+        gap: 5px;
+        border-radius: 5px 5px 0px 0px ;
+        
+    }
+    .main-body{
+        width: 100%;
+     
+        // border: 1px solid red;
+        padding: 0% 5%;
+        margin-bottom: 5%;
+        mat-form-field{
+          width: 100%;
+          background: #fff;
+        //   border-radius: 10px;
+        //   box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.482);
+        }
+        .table-container{
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.542);
+            overflow-x: scroll;
+            width: 100%;
+            background: #fff;
+            // box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.724);
+            table{
+                border-radius: 10px;
+                th{
+                    background: #0f75fb;
+                    color: #ffffff;
+                    text-transform: capitalize;
+                    letter-spacing: 1px;
+                }
+                td{
+                    border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}

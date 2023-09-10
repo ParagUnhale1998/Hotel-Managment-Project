@@ -1,0 +1,36 @@
+
+<ul  ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs" >
+	<li *ngIf="adminIsLogin" [ngbNavItem]="1">
+		<button ngbNavLink>Home<mat-icon class="mat-icon-lg">home</mat-icon></button>
+		<ng-template ngbNavContent >
+		<app-admin-home></app-admin-home>
+		<app-admin-footer></app-admin-footer>	  
+		</ng-template>
+	</li>
+	<li *ngIf="adminIsLogin" [ngbNavItem]="2" >
+		<button ngbNavLink>All Users<mat-icon class="mat-icon-lg">groups</mat-icon></button>
+		<ng-template ngbNavContent>
+			<app-all-users></app-all-users>
+		</ng-template>
+	</li>
+	<li *ngIf="adminIsLogin" [ngbNavItem]="3" >
+		<button ngbNavLink>All Owners<mat-icon class="mat-icon-lg">person</mat-icon></button>
+		<ng-template ngbNavContent>
+			<app-all-owners></app-all-owners>
+			
+		</ng-template>
+	</li>
+	<li *ngIf="adminIsLogin" [ngbNavItem]="4" >
+		<button ngbNavLink>All Hotels<mat-icon class="mat-icon-lg">store</mat-icon></button>
+		<ng-template ngbNavContent>
+		<app-all-hotels></app-all-hotels>
+		
+		</ng-template>
+	</li>
+	<li *ngIf="adminIsLogin" [ngbNavItem]="5" >
+		<button ngbNavLink (click)="logout()">Logout<mat-icon class="mat-icon-lg">logout</mat-icon></button>
+	</li>
+</ul>
+<div  [ngbNavOutlet]="nav" class="mt-2 mainContainer" ></div>
+
+

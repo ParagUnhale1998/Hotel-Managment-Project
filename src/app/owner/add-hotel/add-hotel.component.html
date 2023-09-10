@@ -1,0 +1,47 @@
+<div class="container  pt-4 pb-2 rounded px-3 bg-light addHotelContaienr" style="width: 440px;">
+    <h3 class="text-center">Hotel Details</h3>
+    
+    <form [formGroup]="hotelRegistration" (ngSubmit)="onSubmit()">
+    
+        <div class="mb-2">
+            <input type="text" class="form-control" id="id" placeholder="Make Unique Hotel Id" formControlName="id">
+          </div>
+      <div class="mb-2">
+        <input type="text" class="form-control" id="hotelName" placeholder="Hotel Name" formControlName="hotelName">
+      </div>
+      <div class="mb-2">
+        <input type="number" class="form-control" id="star" placeholder="star" formControlName="star">
+      </div>
+      <div class="mb-2">
+        <input type="text" class="form-control" id="location" placeholder="location" formControlName="location">
+      </div>
+      <div class="mb-2">
+        <input type="number" class="form-control" id="price" placeholder="Price" formControlName="price">
+      </div>
+      <div class="mb-2">
+        <input type="number" class="form-control" id="rooms" placeholder="rooms" formControlName="rooms">
+      </div>
+      <div class="mb-2">
+        <input type="text" class="form-control" id="discription" placeholder="Discription" formControlName="discription">
+      </div>
+      <div class="mb-2">
+        <input type="number" class="form-control" id="phoneNo" placeholder="phoneNo" formControlName="phoneNo">
+      </div>
+      <div class="mb-2">
+        <input type="number" class="form-control" id="availability" placeholder="Availability" formControlName="availability">
+      </div>
+      <div class="mb-2">
+        <input type="text" class="form-control" id="image" placeholder="Image 1" formControlName="image">
+      </div>
+    <!-- <div class="form-group images">
+        <label for="images">Add Images:</label>
+        <input type="file" class="form-control-file" id="images" formControlName="images">
+      </div> -->
+      <div>
+        <button type="submit" class="btn btn-success w-100" [ngClass]="{'disabled-button': hotelRegistration.invalid}">Register</button>
+      </div>
+    </form>
+    <div class="text-center mt-2">
+      <span class="text-dark pointer" style="text-decoration: underline;cursor: pointer;" (click)="cancel()"><a>Cancle Registration</a></span>
+    </div>
+</div>

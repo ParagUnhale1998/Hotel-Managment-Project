@@ -1,0 +1,20 @@
+<!-- You can customize the content of the off-canvas here -->
+<ng-template #content let-offcanvas>
+    <div class="offcanvas-header">
+        <h2 class="offcanvas-title">Admin Login</h2>
+        <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
+    </div>
+    <div class="offcanvas-body">
+        <form [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" formControlName="id"  placeholder="Enter your username">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" formControlName="password"  placeholder="Enter your password">
+            </div>
+            <button type="submit" class="btn btn-primary" [ngClass]="{'disabled-button': loginForm.invalid}">Login</button>
+        </form>
+    </div>
+</ng-template>
