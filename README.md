@@ -1,27 +1,60 @@
-# HotelManagement
+# Hotel Management System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
+This Hotel Management System is a comprehensive Angular application designed for users, owners, and administrators. Utilizing a JSON server (`db.json`) for data storage, it offers seamless functionality for managing hotels, bookings, and users.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### User Module
 
-## Code scaffolding
+- **Sign Up and Login:** Users can register and log in securely to access personalized features.
+- **Hotel Booking:** A user-friendly interface allows users to browse and book hotels.
+- **Cart Functionality:** Users can add hotels to their cart for easy booking.
+- **My Hotels:** Users can view and manage their booked hotels.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Owner Module
 
-## Build
+- **Owner Dashboard:** Owners can log in to their personalized dashboard.
+- **Hotel Management:** CRUD operations for managing hotels with a beautiful interface.
+- **My Bookings:** Owners can view and manage bookings for their hotels.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Admin Module
 
-## Running unit tests
+- **Admin Dashboard:** A special route for administrators with a landing page showcasing all modules.
+- **User, Owner, Hotel Lists:** Admins can view comprehensive lists of users, owners, and hotels.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Technology Stack
 
-## Running end-to-end tests
+- **Angular:** Utilizing Angular for building a dynamic and responsive user interface.
+- **Material UI and Bootstrap:** Enhancing aesthetics and user experience.
+- **JSON Server (`db.json`):** Serving as a lightweight database to store application data.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Getting Started
 
-## Further help
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/ParagUnhale1998/Hotel-Managment-Project.git
+   cd hotel-management
+** Install Dependencies**
+```npm install```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+** Start the JSON Server**
+```npm run server```
+
+** Start the Angular App **
+```ng serve```
+
+# Project Structure
+
+hotel-management-system/
+|-- src/
+|   |-- app/
+|       |-- components/
+|       |-- services/
+|       |-- modules/
+|       |-- ...
+|-- db.json
+|-- ...
+
+Feel free to explore the codebase and contribute to enhancing this Hotel Management System. If you encounter any issues or have suggestions, please create an issue in the repository.
+
+
