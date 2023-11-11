@@ -1,0 +1,81 @@
+<!-- <app-header *ngIf="displayOtherContent"></app-header> -->
+ <form class="sign-up-form" [formGroup] ="signUpForm" (ngSubmit)="submitSignUp()">
+   <div class="heading">
+        <mat-icon>person</mat-icon>
+      <h2> Sign Up</h2>
+   </div> 
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" id="firstName" formControlName="firstName" placeholder="Enter First Name" >
+      <div *ngIf="signUpForm.controls['firstName'].touched && signUpForm.controls['firstName'].errors?.['required']" class="error-message">
+        First Name is required.
+      </div>
+      <span class="error-message" *ngIf="signUpForm.get('firstName')?.errors?.['whiteSpace']">White spaces are not allowed in the name</span>
+
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" id="lastName" formControlName="lastName" placeholder="Enter Last Name" >
+      <div *ngIf="signUpForm.controls['lastName'].touched && signUpForm.controls['lastName'].errors?.['required']" class="error-message">
+        Last Name is required.
+      </div>
+      <span class="error-message" *ngIf="signUpForm.get('lastName')?.errors?.['whiteSpace']">White spaces are not allowed in the name</span>
+
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number</label>
+      <input type="tel" id="phoneNumber" formControlName="phoneNumber" placeholder="Enter Phone Number" >
+      <div *ngIf="signUpForm.controls['phoneNumber'].touched && signUpForm.controls['phoneNumber'].errors?.['required']" class="error-message">
+        Phone Number is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email" placeholder="Enter Email" >
+      <div *ngIf="signUpForm.controls['email'].touched && signUpForm.controls['email'].errors?.['required']" class="error-message">
+        Email is required.
+      </div>
+      
+    </div>
+    <div class="form-group">
+      <label for="id">Username</label>
+      <input type="text" id="id" formControlName="id" placeholder="Enter Username" >
+      <div *ngIf="signUpForm.controls['id'].touched && signUpForm.controls['id'].errors?.['required']" class="error-message">
+        Username is required.
+      </div>
+      <span class="error-message" *ngIf="signUpForm.get('id')?.errors?.['whiteSpace']">White spaces are not allowed in the name</span>
+
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password" placeholder="Enter Password">
+      <div *ngIf="signUpForm.controls['password'].touched && signUpForm.controls['password'].errors?.['required']" class="error-message">
+        Password is required.
+      </div> 
+       <div *ngIf="signUpForm.controls['password'].errors?.['minlength'] && signUpForm.controls['password'].touched" class="error-message">
+        Password must be at least 6 characters long.
+      </div> 
+    </div>
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password</label>
+      <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="Confirm Password"  (keyup)="ConfirmPass()">
+      <div *ngIf="signUpForm.controls['confirmPassword'].touched && signUpForm.controls['confirmPassword'].errors?.['required']" class="error-message">
+        Password is required.
+      </div>
+      <span class="error-message" *ngIf="signUpForm.controls['confirmPassword'].dirty && !isMatch">Password Does Not Matched</span>
+    </div>
+    <div class="form-group gender">
+      <label>Gender</label>
+      <label>
+        <input type="radio" formControlName="gender" value="male" > Male
+      </label>
+      <label>
+        <input type="radio" formControlName="gender" value="female" > Female
+      </label>
+      <label>
+        <input type="radio" formControlName="gender" value="other" > Other
+      </label>
+    </div>
+    <button type="submit" class="submit-button" [ngClass]="{'disabled-button': signUpForm.invalid}"  [disabled]="signUpForm.invalid">Submit Account</button>
+  
+  </form>

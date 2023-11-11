@@ -1,0 +1,13 @@
+<nav>
+    <div class="logo">
+        <h2>Hotels</h2>
+        <p>for Business</p>
+    </div>
+    <div class="navLinks">
+        <button class="btn btn-primary"  (click)="navigateToHome()" [ngClass]="{ 'btn-light': activeButton === 'Home'}">Home<mat-icon class="mat-icon-lg">home</mat-icon></button>
+        <button class="btn btn-primary" (click)="navigateToLogin()" *ngIf="!ownerIsRegister">Login/Signup<mat-icon class="mat-icon-lg">login</mat-icon></button>
+        <button class="btn btn-primary"   (click)="navigateToHotel()" *ngIf="ownerIsRegister" [ngClass]="{ 'btn-light': activeButton === 'myHotels'}">My Hotels<mat-icon class="mat-icon-lg">store</mat-icon></button>
+        <button class="btn btn-primary"  (click)="navigateTOBooking()" *ngIf="ownerIsRegister" [ngClass]="{ 'btn-light': activeButton === 'myBookings'}" >My Bookings<mat-icon class="mat-icon-lg">bookmark</mat-icon></button>
+        <button class="btn btn-danger" (click)="navigateToLogout()" *ngIf="ownerIsRegister">Logout<mat-icon class="mat-icon-lg">logout</mat-icon></button>
+    </div>
+</nav>

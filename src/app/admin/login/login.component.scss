@@ -1,0 +1,55 @@
+/* Custom CSS for the off-canvas */
+ .offcanvas {
+    background-color: #f1f1f1; /* Set the background color */
+    width: 100%; /* Set the width of the off-canvas */
+    height: 100%;
+  }
+  .offcanvas-header{
+    border-bottom: 1px solid rgba(0, 0, 0, 0.211);
+  }
+  .mat-h2, .mat-headline-6, .mat-typography .mat-h2, .mat-typography .mat-headline-6, .mat-typography h2 {
+    margin: 0;
+    font-size: 1.5vw;
+}
+   .offcanvas-body {
+    height: auto; /* Set the height of the off-canvas body */
+    overflow-y: auto; /* Add scrollbar if content overflows */
+  }
+  
+  /* Custom CSS for the login form */
+   .offcanvas-body form {
+    width: 100%; /* Set the width of the login form to 100% */
+    padding: 20px; /* Add padding to the login form */
+    
+  }
+  
+   .offcanvas-body .form-label {
+    font-weight: bold; /* Set font-weight for form labels */
+  }
+  
+   .offcanvas-body .form-control {
+    width: 100%; /* Set the width of form inputs to 100% */
+    margin-bottom: 15px; /* Add margin between form inputs */
+  }
+  
+   .offcanvas-body .btn-primary {
+    width: 100%; /* Set the width of the login button to 100% */
+  }
+  .background{
+    background-image: url(https://leverageedu.com/blog/wp-content/uploads/2019/03/Career-in-Hotel-Management.png);
+    background-repeat: no-repeat;
+    background-size: contain; 
+    background-position: top right;
+    background-attachment: fixed;
+    background-size: 90%;
+    object-fit: contain;
+  }
+  .disabled-button {
+   cursor: not-allowed;
+  }
+  .disabled-button:hover{
+    outline: none;
+    border: 1px solid gray ;
+    background-color: gray;
+  }
+  

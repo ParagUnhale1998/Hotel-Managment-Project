@@ -1,0 +1,31 @@
+<app-navbar [cartLengthinput]="cartLength"></app-navbar>
+<div class="container">
+  <h2>Hotels Cart <mat-icon class="mat-icon-lg">shopping_cart</mat-icon></h2>
+  <div class="cart-container">
+    <div class="cart-items">
+      <h1 *ngIf="userData.cart.length == 0">No Bookings Data</h1>
+
+      <div class="cart-item" *ngFor="let hotel of userData.cart">
+        <div class="item-details">
+          <img src="{{ hotel.image }}" alt="{{ hotel.hotelName }}" class="item-image">
+          <div class="item-info">
+            <h3>Name : {{ hotel.hotelName }}</h3>
+            <p>Location : {{ hotel.location }}</p>
+            <p>Available Rooms : {{ hotel.availability }}</p>
+            <p class="price" >Price: {{ hotel.price | currency: 'INR' }}</p>
+          </div>
+        </div>
+        <div class="btnContainer">
+          <button class="btn btn-danger" (click)="removeFromCart(hotel.id)"><mat-icon class="mat-icon-lg">delete</mat-icon>Remove</button>
+          <button class="btn btn-success" (click)="bookHotelsNow(hotel.ownerId,hotel)">bookNow <mat-icon class="mat-icon-lg">paid</mat-icon></button>
+        </div>
+      </div>
+    </div>
+    <div class="cart-summary">
+
+      <h3>Total Cart Price: <strong>{{ getTotalCartPrice() | currency: 'INR' }}</strong></h3>
+
+    </div>
+  </div>
+</div>
+<app-userfooter></app-userfooter>

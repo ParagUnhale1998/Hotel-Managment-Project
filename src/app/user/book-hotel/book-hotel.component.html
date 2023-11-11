@@ -1,0 +1,100 @@
+<mat-card *ngIf="!confirmPayment && !bookingSuccessfull">
+    <div class="headingContainer">
+        <mat-card-header>
+            <mat-card-title>Book Hotel</mat-card-title>
+        </mat-card-header>
+        <button mat-icon-button mat-card-icon (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+
+    <mat-card-content>
+        <form [formGroup]="bookHotelForm">
+            <div class="detailContainer">
+                <mat-form-field>
+                    <input matInput placeholder="Full Name" formControlName="fullName" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Phone Number" formControlName="phone" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="email" placeholder="Email" formControlName="email" required>
+                </mat-form-field>
+            </div>
+            <div class="dateContainer">
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker" placeholder="Check In" formControlName="bookingDate"
+                        required>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput [matDatepicker]="picker2" placeholder="Check Out" formControlName="bookingExitDate"
+                        required>
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="extraDetailContainer">
+                <mat-form-field>
+                    <input matInput placeholder="Number of Guests" formControlName="guests" type="number" required>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Number of Rooms" formControlName="rooms" type="number" required>
+                </mat-form-field>
+            </div>
+        </form>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="navigateToConfirmBooking()">Next</button>
+        <p class="progressbar"><ngb-progressbar [type]="progressBarType" [value]="progressBarValue"
+                [striped]="true">{{progressBarMessage}}!</ngb-progressbar></p>
+    </mat-card-actions>
+
+</mat-card>
+
+<mat-card *ngIf="confirmPayment && !bookingSuccessfull" class="forgetCard">
+    <div class="headingContainer">
+        <mat-card-header>
+            <mat-card-title>Confirm Payment</mat-card-title>
+        </mat-card-header>
+        <button mat-icon-button mat-card-icon (click)="close()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <mat-card-content class="forgetContent">
+        <form [formGroup]="confirmPaymentForm">
+            <mat-form-field>
+                <mat-label>Payment Method</mat-label>
+                <mat-select formControlName="paymentMethod" required>
+                    <mat-option *ngFor="let method of paymentMethods" [value]="method">{{ method }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password" placeholder="Enter your password" required>
+            </mat-form-field>
+            <div class="btnContainer">
+                <button mat-raised-button color="primary" (click)="confirmPaymentAndBookHotel()">Confirm</button>
+                <button class="btn btn-danger" color="danger" (click)="confirmPayment = false">Back</button>
+            </div>
+            <p class="progressbar"><ngb-progressbar [type]="progressBarType" [value]="progressBarValue"
+                    [striped]="true">{{progressBarMessage}}!</ngb-progressbar></p>
+
+        </form>
+    </mat-card-content>
+</mat-card>
+
+
+<div class="container" *ngIf="bookingSuccessfull">
+    <div class="success-container">
+        <div class="success-icon">
+            <mat-icon class="mat-icon-lg">done</mat-icon>
+            <!-- <i class="fas fa-check-circle"></i> -->
+        </div>
+        <h1>Booking Successful!</h1>
+        <p>Your hotel booking has been successfully completed.</p>
+        <button mat-raised-button color="primary" (click)="navigateToBooking()">Check Booking Page</button>
+    </div>
+</div>

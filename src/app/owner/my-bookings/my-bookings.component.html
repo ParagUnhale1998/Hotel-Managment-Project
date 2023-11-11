@@ -1,0 +1,129 @@
+<!-- <nav>
+    <div class="logo">
+        <h2>Hotels</h2>
+        <p>for Business</p>
+    </div>
+    <div class="navLinks">
+        <button class="btn btn-primary " (click)="navigateToHome()">Home</button>
+        <button class="btn btn-primary " (click)="navigateToHotel()" >My Hotels</button>
+        <button class="btn btn-primary  btn-light" (click)="navigateTOBooking()" >My Bookings</button>
+        <button class="btn btn-primary" (click)="navigateToLogout()" >Logout</button>
+    </div>
+</nav> -->
+<app-navbar></app-navbar>
+<div class="mainContainer">
+    <div class="detailContainer">
+        <h3>Boost Your Bookings: Join Us and Get More Guests than Ever Before!</h3>
+        <p>Limited-Time Offer: Register Your Hotel Today and Avail of Special Benefits!</p>
+        <p>Exclusive Ad Promotion: Get INR 1500 Worth of Ads to Attract More Guests!</p>
+        <div class="btnContainer">
+            <button class="btn btn-primary d-flex align-item-center justify-content-center gap-2 ">Join Us <mat-icon class="mat-icon-lg">loyalty</mat-icon></button>
+        </div>
+        <span>Need help? Please email us at merchantonboarding@Hotels.com</span>
+    </div>
+</div>
+
+<div class="bookingContainer">
+    <mat-toolbar class="Heading d-flex align-item-center justify-content-center gap-2">
+      All Bookings List <mat-icon class="mat-icon-lg">fact_check</mat-icon>
+    </mat-toolbar>
+    <div class="main-body">
+        <mat-form-field>
+            <mat-label>Filter Search Bookings</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Taj Hotel" #input>
+        </mat-form-field>
+
+        <div class="table-container">
+            <table mat-table [dataSource]="dataSource" matSort>
+              
+                <!-- Serial Number Column -->
+              <ng-container matColumnDef="serialNumber">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Serial No. </th>
+                <td mat-cell *matCellDef="let row"> {{ row.serialNumber }}</td>
+              </ng-container>
+              
+                <!-- ID Column -->
+                <ng-container matColumnDef="id">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                  <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+                </ng-container>
+            
+                <!-- Hotel Name Column -->
+                <ng-container matColumnDef="hotelID">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Hotel Name </th>
+                  <td mat-cell *matCellDef="let row"> {{row.hotelID}}</td>
+                </ng-container>
+            
+                <!-- Location Column -->
+                <ng-container matColumnDef="fullName">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Full Name </th>
+                  <td mat-cell *matCellDef="let row"> {{row.fullName}}</td>
+                </ng-container>
+            
+                <!-- Star Rating Column -->
+                <ng-container matColumnDef="phone">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> phone Number </th>
+                  <td mat-cell *matCellDef="let row"> {{row.phone}}</td>
+                </ng-container>
+            
+                <!-- Price Column -->
+                <ng-container matColumnDef="email">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+                  <td mat-cell *matCellDef="let row"> {{row.email}}</td>
+                </ng-container>
+            
+                <!-- Rooms Column -->
+                <ng-container matColumnDef="bookingDate">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> bookingDate </th>
+                  <td mat-cell *matCellDef="let row"> {{row.bookingDate}}</td>
+                </ng-container>
+            
+                <!-- Description Column -->
+                <ng-container matColumnDef="bookingExitDate">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> bookingExitDate </th>
+                  <td mat-cell *matCellDef="let row"> {{row.bookingExitDate}}</td>
+                </ng-container>
+            
+                <!-- Phone Number Column -->
+                <ng-container matColumnDef="paymentMethod">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> paymentMethod </th>
+                  <td mat-cell *matCellDef="let row"> {{row.paymentMethod}}</td>
+                </ng-container>
+            
+                <!-- Available Rooms Column -->
+                <ng-container matColumnDef="guests">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> guests </th>
+                  <td mat-cell *matCellDef="let row"> {{row.guests }}</td>
+                </ng-container>
+            
+                <!-- Image Link Column -->
+                <ng-container matColumnDef="rooms">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Rooms </th>
+                  <td mat-cell *matCellDef="let row"> {{row.rooms }}</td>
+                </ng-container>
+                 
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+                    <td mat-cell *matCellDef="let row">
+                        <button mat-icon-button color="warn" (click)="deleteBookings(row.id)">
+                            <mat-icon>delete</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            
+                <!-- Row shown when there is no matching data. -->
+                <tr class="mat-row" *matNoDataRow>
+                  <td class="mat-cell" colspan="9">No data matching the filter "{{input.value}}"</td>
+                </tr>
+              </table>
+   
+            <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+        </div>
+
+    </div>
+
+
+</div>

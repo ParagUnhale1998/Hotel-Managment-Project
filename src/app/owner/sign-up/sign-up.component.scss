@@ -1,0 +1,126 @@
+:host{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    background-image: url(../../../assets/background/group-20.svg);
+    background-repeat: no-repeat;
+    background-size: 70%;
+}
+.ownerNavbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    // border: 1px solid red;
+padding: 1% 1% 0% 1%;
+    .btnContainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+            // border: 1px solid red;
+
+    }
+
+}
+app-header,app-footer{
+    width: 100%;
+    background: #00000000;
+}
+.mainContainer{
+   padding: 1%;
+    // border: 1px solid red;
+}
+.heading{
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+//   border: 1px solid red;
+  padding: 1%;
+  h2{
+    font-size: 3vw;
+    line-height: 1.2;
+  }
+  p{
+    color: #000000ad;
+    font-size: 1vw;
+  }
+  .jumbo-sub-title {
+    font-size: 1.25rem;
+    opacity: 0.8;
+    margin-top: 2rem;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.54);
+}
+  .detailContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    
+
+    .jumbo-counter-text {
+        font-weight: 600;
+        font-size: 20px;
+        padding-left: 12px;
+        line-height: 30px;
+    } 
+  }
+}
+.formContainer{
+    // border: 1px solid rgb(0, 179, 255);
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.383);
+    h2{
+        text-align: center;
+        padding-top: 2%;
+    }
+    form{
+           padding: 2%;
+           
+           
+           .form-group{
+            background: #fff;
+            border-radius: 5px;
+            position: relative;
+
+           
+
+            .label-name {
+                position: absolute;
+                top: 5px;
+                left: 15px;
+                font-size: 12px;
+                line-height: 1.67;
+                letter-spacing: normal;
+                color: black;
+                font-weight: 300;
+            }
+            .label-input {
+                padding-top: 20px;
+                height: 50px;
+                font-size: 16px;
+                letter-spacing: 1px !important;
+                margin-bottom: 1.5%;
+            }
+           .error-message {
+                color: #ee2e24;
+                font-size: 13px;
+            }
+            
+           }
+           .idCard{
+            margin-bottom: 1.5%;
+        }
+       
+    }
+
+}

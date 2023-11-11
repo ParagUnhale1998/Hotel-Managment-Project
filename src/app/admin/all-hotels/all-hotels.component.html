@@ -1,0 +1,40 @@
+
+<h1>All Hotels Data</h1>
+
+<div class="search-container">
+    <input type="text" class="search-input" placeholder="Search ... Name , Location " aria-label="Search"
+      [(ngModel)]="searchInput">
+</div>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col" sortable="id">ID</th>
+			<th scope="col" sortable="hotelName">Hotel Name</th>
+			<th scope="col" sortable="star">Rating</th>
+			<th scope="col" sortable="location">Address</th>
+			<th scope="col" sortable="price">Price</th>
+			<th scope="col" sortable="rooms">Rooms</th>
+			<th scope="col" sortable="discription">Discription</th>
+			<th scope="col" sortable="phoneNo">Phone No</th>
+			<th scope="col" sortable="availability">Available Rooms</th>
+			<th scope="col" sortable="image">Images</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let hotel of allHotelsData | filtersItems: searchInput; index as i">
+			<th scope="row">{{ i + 1 }}</th>
+            <td>{{hotel.id}}</td>
+			<td>{{hotel.hotelName}}</td>
+			<td>{{hotel.star}}</td>
+			<td>{{hotel.location }}</td>
+			<td>{{hotel.price | currency: 'INR':'symbol':"1.0-2"}}</td>
+			<td>{{hotel.rooms | number}}</td>
+			<td>{{hotel.discription}}</td>
+			<td>{{hotel.phoneNo}}</td>
+			<td>{{hotel.availability | number}}</td>
+			<td><img [src]="hotel.image" alt=""></td>
+		</tr>
+	</tbody>
+</table>

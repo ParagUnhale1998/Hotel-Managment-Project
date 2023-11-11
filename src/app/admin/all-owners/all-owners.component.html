@@ -1,0 +1,33 @@
+<h1>All Owners Data</h1>
+<div class="search-container">
+    <input type="text" class="search-input" placeholder="Search ... Name , Location " aria-label="Search"
+      [(ngModel)]="searchInput">
+</div>
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col" sortable="id">ID</th>
+			<th scope="col" sortable="name">name</th>
+			<th scope="col" sortable="company">Company Name</th>
+			<th scope="col" sortable="phoneNO">Phone Number</th>
+			<th scope="col" sortable="email">Email Address</th>
+			<th scope="col" sortable="address">Address</th>
+			<th scope="col" sortable="agreeTerms">Agree Terms</th>
+			<th scope="col" sortable="agreeTerms">Hotels</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let owner of allOwnerData| filtersItems: searchInput; index as i">
+			<th scope="row">{{ i + 1 }}</th>
+            <td>{{owner.id}}</td>
+			<td>{{owner.name}}</td>
+			<td>{{owner.company}}</td>
+			<td>{{owner.phoneNumber | number}}</td>
+			<td>{{owner.email}}</td>
+			<td>{{owner.address}}</td>
+			<td>{{owner.agreeTerms}}</td>
+			<td>{{owner.hotels.length}}</td>
+		</tr>
+	</tbody>
+</table>

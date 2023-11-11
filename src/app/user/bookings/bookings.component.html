@@ -1,0 +1,27 @@
+<app-navbar [bookingLength]="bookingLength"></app-navbar>
+<div class="container">
+  <h2>My Bookings <mat-icon class="mat-icon-lg">shopping_cart_checkout</mat-icon></h2>
+  <div class="cart-container">
+    <h1 *ngIf="filteredUserBookings.length == 0">No Bookings Data</h1>
+      <div class="cart-item" *ngFor="let booking of filteredUserBookings">
+        <div class="item-details">
+            <img src="{{ booking.hotelImage }}" alt="{{ booking.hotelName }}" class="item-image">
+            <div class="item-info">
+                <strong>Booking Id :{{booking.id}}</strong>
+                <h3>Name : {{ booking.hotelName }}</h3>
+            <p>Address : {{ booking.hotelAddress }}</p>
+            <p >PhoneNo: {{ booking.hotelPhoneNo }}</p>
+            <p >Check IN: {{ booking.bookingDate }}</p>
+            <p >Check Out: {{ booking.bookingExitDate }}</p>
+            <p >Guests: {{ booking.guests }}</p>
+            <p >Rooms: {{ booking.rooms }}</p>
+            <p class="price" >Price: {{ booking.hotelPrice | currency: 'INR' }}</p>
+          </div>
+        </div>
+        <div class="btnContainer">
+          <button class="btn btn-danger" (click)="cancleBookings(booking.id)"><mat-icon class="mat-icon-lg">delete</mat-icon>Remove</button>
+        </div>
+      </div>
+  </div>
+</div>
+<app-userfooter></app-userfooter>

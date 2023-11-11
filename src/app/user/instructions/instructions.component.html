@@ -1,0 +1,23 @@
+<div class="modal-container" *ngIf="instructions">
+    <!-- Modal Content -->
+    <div class="modal-content">
+      <h2>Welcome to My Portfolio!</h2>
+      <p>Thank you for visiting. Here are some instructions:</p>
+
+      <!-- Instructions -->
+      <ul>
+        <li class="intro1">Wait for 1 minute to allow backend data to load.</li>
+        <li class="intro2">Use the following credentials for testing:</li>
+    
+          <li>User ID: <span class="highlight">paragunhale</span>, Password: <span class="highlight">parag123</span></li>
+          <li>Hotel owner ID: <span class="highlight">paragunhale123</span>, Password: <span class="highlight">parag12345</span></li>
+          <li>Admin ID: <span class="highlight">paragAdmin</span>, Password: <span class="highlight">paragAdmin123</span></li>
+      
+      </ul>
+
+      <p>Feel free to explore and check out all the functionalities!</p>
+
+      <!-- Close Button -->
+      <button class="close-button" (click)="closeModal()">Close</button>
+    </div>
+  </div>

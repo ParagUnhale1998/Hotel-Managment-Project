@@ -1,0 +1,16 @@
+<nav>
+    <div class="logoContaienr">
+        <img src="../../../assets/logo/Hotel-PNG-Image.png" alt="">
+        <h2>Hotels</h2>
+    </div>
+    <div class="links">
+        <!-- <button class="btn btn-primary">Home</button> -->
+        <button class="btn btn-primary" (click)="navigateToHome()">Home<mat-icon class="mat-icon-lg">home</mat-icon></button>
+        <button class="btn btn-primary" (click)="navigateToLogin()" *ngIf="!userIsRegister">log in/Sign up<mat-icon class="mat-icon-lg">login</mat-icon></button>
+        <button class="btn btn-primary" (click)="navigateToBusinessHome()" *ngIf="!userIsRegister">Business Home<mat-icon class="mat-icon-lg">storefront</mat-icon></button>
+        <button class="btn btn-primary" (click)="navigateToAdmin()" *ngIf="!userIsRegister">Admin<mat-icon class="mat-icon-lg">manage_accounts</mat-icon></button>
+        <button class="btn btn-danger" (click)="logout()" *ngIf="userIsRegister">Logout<mat-icon class="mat-icon-lg">logout</mat-icon></button>
+        <button class="btn cart" (click)="navigateToCart()" *ngIf="userIsRegister"><mat-icon aria-hidden="false" class="mat-icon-lg" [matBadge]="cartLength" matBadgeColor="accent">shopping_cart</mat-icon></button>
+        <button class="btn cart" (click)="navigateToBookings()" *ngIf="userIsRegister"><mat-icon aria-hidden="false" class="mat-icon-lg" [matBadge]="bookingLength || bookingsLength" matBadgeColor="accent">account_circle</mat-icon></button>
+    </div>
+</nav>
